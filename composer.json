@@ -1,0 +1,26 @@
+{
+  "name": "ikon/sandbox",
+  "description": "Just texting git",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Ioulia Kondratovitch",
+      "email": "ik@plan2.net"
+    }
+  ],
+  "require": {},
+  "scripts": {
+    "git-hook-scripts": [
+      "chmod 755 git-hooks/pre-push.sh",
+      "chmod 755 git-hooks/commit-msg.sh",
+      "ln -sf ../../git-hooks/pre-push.sh .git/hooks/pre-push",
+      "ln -sf ../../git-hooks/commit-msg.sh .git/hooks/commit-msg"
+    ],
+    "post-install-cmd": [
+      "@git-hook-scripts"
+    ],
+    "post-update-cmd": [
+      "@git-hook-scripts"
+    ]
+  }
+}
